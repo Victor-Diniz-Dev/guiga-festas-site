@@ -2,6 +2,12 @@
 
 Site responsivo para festas com cama elástica, piscina de bolinhas, combos e algodão doce. Feito em HTML, CSS e JavaScript puro.
 
+## Resumo do projeto
+
+Site comercial responsivo da Guiga Festas, organizado em cinco páginas para apresentar brinquedos, pacotes, contratação, dúvidas e condições. A implementação mantém HTML, CSS e JavaScript puro, priorizando fotos reais, identidade visual própria e orçamento via WhatsApp.
+
+O estudo de caso completo para adaptação ao portfólio está em [docs/estudo-de-caso.md](docs/estudo-de-caso.md).
+
 ## Abrir localmente
 
 Abra `index.html` no navegador. Não há dependências nem etapa de build.
@@ -34,3 +40,9 @@ Todas as páginas compartilham `styles.css`, `script.js`, a navegação mobile e
 ## Interações
 
 As seções aparecem suavemente durante a rolagem e a navegação entre páginas usa uma breve transição. O movimento respeita a preferência `prefers-reduced-motion`. A rolagem suave já está definida no CSS.
+
+## Métricas de acesso na Vercel
+
+As páginas incluem o script oficial do Vercel Web Analytics. Para começar a coletar visualizações, abra o projeto no painel da Vercel, entre em **Analytics** e habilite **Web Analytics**; em seguida, publique uma nova implantação de produção. Depois, veja **Visitors** e **Page Views** no painel Analytics. Sem o recurso habilitado no painel, não haverá dados de acesso.
+
+A integração usa a rota estática da Vercel e não adiciona dependências ao projeto. As informações de métricas estão resumidas em `termos.html`.
