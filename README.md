@@ -15,7 +15,7 @@ Abra `index.html` no navegador. Não há dependências nem etapa de build.
 
 ## Contato e imagens
 
-O WhatsApp continua configurado para `5511946175604`. A mensagem pré-preenchida inclui o serviço selecionado e os campos para data, horário, endereço e tipo de local.
+O WhatsApp continua configurado para `5511946175604`. Todos os botões abrem o WhatsApp com a mensagem: “Olá! Vim pelo site da Guiga Festas e gostaria de fazer um orçamento.”
 
 As quatro imagens anexadas foram copiadas para `assets/` e são usadas localmente: `cama-elastica.jpg`, `piscina-bolinhas.jpg`, `crianca-piscina-bolinhas.jpg` e `algodao-doce.jpg`. Para substituir uma foto, atualize o caminho `src` correspondente em `index.html`.
 
@@ -30,3 +30,7 @@ Google Fonts fornece Fraunces e DM Sans. Se não houver conexão, a página usa 
 - `termos.html`: resumo informativo das condições; o orçamento e o contrato aceito detalham cada evento.
 
 Todas as páginas compartilham `styles.css`, `script.js`, a navegação mobile e os links de WhatsApp. Abra `index.html` no navegador para começar.
+
+## Interações
+
+As seções aparecem suavemente durante a rolagem e a navegação entre páginas usa uma breve transição. O movimento respeita a preferência `prefers-reduced-motion`. A rolagem suave já está definida no CSS.

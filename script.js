@@ -1,16 +1,9 @@
 const WHATSAPP_NUMBER = '5511946175604';
-const WHATSAPP_TEMPLATE = (selection) =>
-  `Olá! Vim pelo site da Guiga Festas e gostaria de fazer um orçamento.\n\n` +
-  `Brinquedo ou pacote: ${selection || ''}\n` +
-  `Data do evento:\n` +
-  `Horário desejado:\n` +
-  `Bairro ou CEP:\n` +
-  `Local do evento (casa, salão ou condomínio):\n\n` +
-  `Poderiam me informar a disponibilidade e o valor do deslocamento?`;
+const WHATSAPP_MESSAGE = 'Ol\u00e1! Vim pelo site da Guiga Festas e gostaria de fazer um or\u00e7amento.';
+const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
 
 document.querySelectorAll('[data-whatsapp]').forEach((link) => {
-  const message = WHATSAPP_TEMPLATE(link.dataset.whatsapp);
-  link.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+  link.href = whatsappUrl;
   link.target = '_blank';
   link.rel = 'noopener noreferrer';
 });
@@ -31,6 +24,33 @@ mainNav.querySelectorAll('a').forEach((link) => {
     menuToggle.querySelector('.sr-only').textContent = 'Abrir menu';
     mainNav.classList.remove('is-open');
   });
+});
+
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+if (!prefersReducedMotion && 'IntersectionObserver' in window) {
+  const revealTargets = document.querySelectorAll('.home-process, .product-feature, .product-item, .about-photo, .steps-heading, .steps-list li, .process-detail-list article, .faq-intro, .faq-list details, .legal-content > section, .legal-note, .closing');
+  const revealObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+  revealTargets.forEach((target) => {
+    target.classList.add('scroll-reveal');
+    revealObserver.observe(target);
+  });
+}
+
+document.addEventListener('click', (event) => {
+  const link = event.target.closest('a[href]');
+  if (!link || event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || link.target === '_blank' || prefersReducedMotion) return;
+  const destination = new URL(link.href, window.location.href);
+  if (destination.origin !== window.location.origin || destination.pathname === window.location.pathname || !destination.pathname.endsWith('.html')) return;
+  event.preventDefault();
+  document.body.classList.add('page-leaving');
+  window.setTimeout(() => window.location.assign(destination.href), 140);
 });
 
 document.querySelector('#current-year').textContent = new Date().getFullYear();
