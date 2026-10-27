@@ -20,3 +20,13 @@ O WhatsApp continua configurado para `5511946175604`. A mensagem pré-preenchida
 As quatro imagens anexadas foram copiadas para `assets/` e são usadas localmente: `cama-elastica.jpg`, `piscina-bolinhas.jpg`, `crianca-piscina-bolinhas.jpg` e `algodao-doce.jpg`. Para substituir uma foto, atualize o caminho `src` correspondente em `index.html`.
 
 Google Fonts fornece Fraunces e DM Sans. Se não houver conexão, a página usa fontes de sistema como alternativa.
+
+## Páginas
+
+- `index.html`: apresentação breve da Guiga Festas e acesso às informações principais.
+- `brinquedos.html`: catálogo e pacotes de brinquedos e atrações.
+- `como-funciona.html`: etapas de orçamento e contratação.
+- `duvidas.html`: perguntas frequentes.
+- `termos.html`: resumo informativo das condições; o orçamento e o contrato aceito detalham cada evento.
+
+Todas as páginas compartilham `styles.css`, `script.js`, a navegação mobile e os links de WhatsApp. Abra `index.html` no navegador para começar.
