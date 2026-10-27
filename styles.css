@@ -82,3 +82,9 @@ body.page-leaving{opacity:0;transition:opacity .14s ease}
 
 .creator-credit{color:var(--muted);font-size:.66rem;white-space:nowrap;transition:color .2s ease}
 .creator-credit:hover{color:var(--orange)}
+
+/* Ícones de canais de contato */
+.whatsapp-icon{color:#25d366;display:inline-block;width:1.05rem;height:1.05rem;flex:none;vertical-align:middle;fill:none;stroke:currentColor;stroke-width:1.55;stroke-linecap:round;stroke-linejoin:round}
+.footer-social{display:inline-flex;align-items:center;gap:.35rem}
+.instagram-icon{width:1rem;height:1rem;flex:none;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.instagram-dot{fill:currentColor;stroke:none}
